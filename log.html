@@ -5,7 +5,7 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="-1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta content="Robot Framework 6.1.1 (Python 3.7.9 on win32)" name="Generator">
+<meta content="Robot Framework 5.0.1 (Python 3.10.12 on win32)" name="Generator">
 <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKcAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAAqAAAAAAAAAAAAAAAAAAAALIAAAD/AAAA4AAAANwAAADcAAAA3AAAANwAAADcAAAA3AAAANwAAADcAAAA4AAAAP8AAACxAAAAAAAAAKYAAAD/AAAAuwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC/AAAA/wAAAKkAAAD6AAAAzAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAN8AAAD/AAAA+gAAAMMAAAAAAAAAAgAAAGsAAABrAAAAawAAAGsAAABrAAAAawAAAGsAAABrAAAADAAAAAAAAADaAAAA/wAAAPoAAADDAAAAAAAAAIsAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAANEAAAAAAAAA2gAAAP8AAAD6AAAAwwAAAAAAAAAAAAAAMgAAADIAAAAyAAAAMgAAADIAAAAyAAAAMgAAADIAAAAFAAAAAAAAANoAAAD/AAAA+gAAAMMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADaAAAA/wAAAPoAAADDAAAAAAAAADwAAAB8AAAAAAAAAGAAAABcAAAAAAAAAH8AAABKAAAAAAAAAAAAAAAAAAAA2gAAAP8AAAD6AAAAwwAAAAAAAADCAAAA/wAAACkAAADqAAAA4QAAAAAAAAD7AAAA/wAAALAAAAAGAAAAAAAAANoAAAD/AAAA+gAAAMMAAAAAAAAAIwAAAP4AAAD/AAAA/wAAAGAAAAAAAAAAAAAAAMkAAAD/AAAAigAAAAAAAADaAAAA/wAAAPoAAADDAAAAAAAAAAAAAAAIAAAAcAAAABkAAAAAAAAAAAAAAAAAAAAAAAAAEgAAAAAAAAAAAAAA2gAAAP8AAAD7AAAAywAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAN4AAAD/AAAAqwAAAP8AAACvAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALIAAAD/AAAAsgAAAAAAAAC5AAAA/wAAAMoAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMkAAAD/AAAAvAAAAAAAAAAAAAAAAAAAAKwAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAArQAAAAAAAAAAwAMAAIABAAAf+AAAP/wAAD/8AAAgBAAAP/wAAD/8AAA//AAAJIwAADHEAAA//AAAP/wAAB/4AACAAQAAwAMAAA==">
 <style media="all" type="text/css">
 /* Generic and misc styles */
@@ -560,9 +560,6 @@ function toggleSuite(suiteId) {
 }
 function toggleTest(testId) {
     toggleElement(testId, ['keyword']);
-    var test = window.testdata.findLoaded(testId);
-    if (test.status == "FAIL" || test.status == "SKIP")
-        expandFailed(test);
 }
 function toggleKeyword(kwId) {
     toggleElement(kwId, ['keyword']);
@@ -626,7 +623,7 @@ function loadAndExpandElementIds(ids) {
     }
 }
 function expandFailed(element) {
-    if (element.status == "FAIL" || (element.type == "test" && element.status == "SKIP")) {
+    if (element.status == "FAIL") {
         window.elementsToExpand = [element];
         window.expandDecider = function (e) {
             return e.status == "FAIL";
@@ -1358,7 +1355,7 @@ window.testdata = function () {
     var LEVELS = ['TRACE', 'DEBUG', 'INFO', 'WARN', 'ERROR', 'FAIL', 'SKIP'];
     var STATUSES = ['FAIL', 'PASS', 'SKIP', 'NOT RUN'];
     var KEYWORD_TYPES = ['KEYWORD', 'SETUP', 'TEARDOWN', 'FOR', 'ITERATION', 'IF', 'ELSE IF', 'ELSE', 'RETURN',
-                         'TRY', 'EXCEPT', 'FINALLY', 'WHILE', 'CONTINUE', 'BREAK', 'ERROR'];
+                         'TRY', 'EXCEPT', 'FINALLY', 'WHILE', 'CONTINUE', 'BREAK'];
     function addElement(elem) {
         if (!elem.id)
             elem.id = uniqueId();
@@ -1806,31 +1803,31 @@ function stopPropagation(event) {
 window.output = {};
 </script>
 <script type="text/javascript">
-window.output["suite"] = [1,2,3,4,[],[1,0,28427],[],[[5,0,0,[],[1,120,28304],[[0,6,7,0,0,8,0,0,[1,121,24482],[[0,9,7,0,0,10,0,0,[1,121,24482],[[0,11,12,0,13,14,0,0,[1,121,1416],[[122,2,15]]],[0,16,12,0,17,0,0,0,[1,1537,37],[]],[0,18,12,0,19,20,0,0,[1,1574,23020],[[1574,2,21]]],[0,22,12,0,23,24,0,0,[1,24594,9],[]]]]]],[0,25,7,0,0,26,0,0,[1,24604,69],[[0,27,12,0,28,29,0,0,[1,24604,68],[[24605,2,30]]]]],[0,31,7,0,0,0,0,0,[1,24674,223],[[0,32,12,0,33,34,0,0,[1,24674,222],[[24675,2,35]]]]],[0,36,12,0,37,38,0,0,[1,24898,1376],[]],[0,39,12,0,40,41,0,0,[1,26275,9],[[26283,2,42]]],[2,43,12,0,44,0,0,0,[1,26284,2140],[]]]]],[],[1,1,0,0]];
+window.output["suite"] = [1,2,3,4,[],[0,0,38],[],[[5,0,0,[],[0,20,18,6],[[0,7,8,0,0,9,0,0,[0,20,7],[[0,10,8,0,0,11,0,0,[0,20,7],[[0,12,0,0,0,13,0,0,[0,20,7],[[20,5,14]]],[0,15,0,0,0,0,0,0,[3,27,0],[]],[0,16,0,0,0,17,0,0,[3,27,0],[]],[0,18,0,0,0,19,0,0,[3,27,0],[]]]]]],[0,20,8,0,0,21,0,0,[3,27,0],[]],[0,22,8,0,0,0,0,0,[3,27,0],[]],[0,23,0,0,0,24,0,0,[3,27,0],[]],[0,25,0,0,0,26,0,0,[3,27,0],[]],[2,27,0,0,0,0,0,0,[0,38,0,28],[[38,5,28]]]]]],[],[1,0,1,0]];
 </script>
 <script type="text/javascript">
 window.output["strings"] = [];
 </script>
 <script type="text/javascript">
-window.output["strings"] = window.output["strings"].concat(["*","*Example","*c:\\Users\\lbenamar\\Desktop\\Nouveau dossier\\robotframework-selenium-example\\test-cases\\example.robot","eNq9zUEKwjAQheGrSMFlfOKy1G507c4DTPUFQ5NOmUnU4wviGdz+8PEPsnkY47GLKbMHcOpxdZojT1ykiOFMn6uuuGh7Utr2sL+re6LBdNIaTQpfanNwZi6plcC3lDUTlV7DTZyOX9p9STf+8zZAxg8VxlVY","*<p>Search Google\x3c/p>","*Search Google with &quot;Google Search&quot; button via Chrome","*Open Url With Chrome","*keywords","*${GOOGLE_URL}","*Open Url","*Chrome, ${url}","*Create Webdriver","*SeleniumLibrary","*<p>Creates an instance of Selenium WebDriver.\x3c/p>","*${browser}","*Creating an instance of the Chrome WebDriver.","*Maximize Browser Window","*<p>Maximizes current browser window.\x3c/p>","*Go To","*<p>Navigates the current browser window to the provided <code>url\x3c/code>.\x3c/p>","*${url}","*Opening url '<a href=\"https://www.google.com.vn/\">https://www.google.com.vn/\x3c/a>'","*Wait For Condition","*<p>Waits until <code>condition\x3c/code> is true or <code>timeout\x3c/code> expires.\x3c/p>","*return !!document.body","*Enter Keyword","*Github","*Input Text","*<p>Types the given <code>text\x3c/code> into the text field identified by <code>locator\x3c/code>.\x3c/p>","*<a href=\"xpath://textarea[@name=&quot;q\">xpath://textarea[@name=\"q\x3c/a>\"], ${keyword}","*Typing text 'Github' into text field '<a href=\"xpath://textarea[@name=&quot;q\">xpath://textarea[@name=\"q\x3c/a>\"]'.","*Click Search Button","*Submit Form","*<p>Submits a form identified by <code>locator\x3c/code>.\x3c/p>","*<a href=\"xpath://form[@role=&quot;search\">xpath://form[@role=\"search\x3c/a>\"]","*Submitting form '<a href=\"xpath://form[@role=&quot;search\">xpath://form[@role=\"search\x3c/a>\"]'.","*Wait Until Element Is Visible","*<p>Waits until the element <code>locator\x3c/code> is visible.\x3c/p>","*css:div#rso","*Page Should Contain Element","*<p>Verifies that element <code>locator\x3c/code> is found on the current page.\x3c/p>","*<a href=\"xpath://cite[contains(text(\">xpath://cite[contains(text(\x3c/a>), \"<a href=\"https://github.com\">https://github.com\x3c/a>\")]","*Current page contains element '<a href=\"xpath://cite[contains(text(\">xpath://cite[contains(text(\x3c/a>), \"<a href=\"https://github.com\">https://github.com\x3c/a>\")]'.","*Close Browser","*<p>Closes the current browser.\x3c/p>"]);
+window.output["strings"] = window.output["strings"].concat(["*","*Example","*c:\\Users\\lbenamar\\Desktop\\Nouveau dossier\\robotframework-selenium-example\\test-cases\\example.robot","eNq9zUEKwjAQheGrSMFlfOKy1G507c4DTPUFQ5NOmUnU4wviGdz+8PEPsnkY47GLKbMHcOpxdZojT1ykiOFMn6uuuGh7Utr2sL+re6LBdNIaTQpfanNwZi6plcC3lDUTlV7DTZyOX9p9STf+8zZAxg8VxlVY","*<p>Search Google\x3c/p>","*Search Google with &quot;Google Search&quot; button via Chrome","*No keyword with name 'Create WebDriver' found.\n\nAlso teardown failed:\nNo keyword with name 'Close Browser' found.","*Open Url With Chrome","*keywords","*${GOOGLE_URL}","*Open Url","*Chrome, ${url}","*Create WebDriver","*${browser}","*No keyword with name 'Create WebDriver' found.","*Maximize Browser Window","*Go To","*${url}","*Wait For Condition","*return !!document.body","*Enter Keyword","*Github","*Click Search Button","*Wait Until Element Is Visible","*css:div#rso","*Page Should Contain Element","*<a href=\"xpath://cite[contains(text(\">xpath://cite[contains(text(\x3c/a>), \"<a href=\"https://github.com\">https://github.com\x3c/a>\")]","*Close Browser","*No keyword with name 'Close Browser' found.","eNq1kkFP4zAQhe/9FXPrckhEmsKK3BBlBVLpVtpyWMlS5djTYtXxWDNOWfj1mIL2AJyicn3W++b5zVwzE4MLsHEeYWwadS/IonyLQXea1QxllyiqBfV71D1YEnHIiqmltGHd4SPxrhD0GFzfFfhPd9GjSiipMFpQ1LtUHixjoADeBYS6gdsuEicXtllpWfMTjP+8g+Zvwhg2OiezDdyR7T0uKP2iPtjr19wNLAi6gw45LdrP9tGKtcFWmx386EgSMBoMCYz2HryWdNKMIGMCjpZ/Vze/F8vL1c2r9LmJci+GLObvJAziKMihBEMcyw9teIlFVVaT8lQJmw9drS22/XatrY4JOY+6Olbpx439vSV4UXsMlhjt26Al0za/znTS/5HqIanKXNTT6c91W21qM5muz8/PJhcGrYpP6YFCXZ2Wzy4OZMzmcxlozRc7zDl8nhKXsIj5mPUW5Vgc9ehCPTkubXg7XxCXh0Vn7gtPWKsA"]);
 </script>
 <script type="text/javascript">
-window.output["stats"] = [[{"elapsed":"00:00:28","fail":0,"label":"All Tests","pass":1,"skip":0}],[],[{"elapsed":"00:00:28","fail":0,"id":"s1","label":"Example","name":"Example","pass":1,"skip":0}]];
+window.output["stats"] = [[{"elapsed":"00:00:00","fail":1,"label":"All Tests","pass":0,"skip":0}],[],[{"elapsed":"00:00:00","fail":1,"id":"s1","label":"Example","name":"Example","pass":0,"skip":0}]];
 </script>
 <script type="text/javascript">
-window.output["errors"] = [];
+window.output["errors"] = [[14,4,29]];
 </script>
 <script type="text/javascript">
-window.output["baseMillis"] = 1716563820068;
+window.output["baseMillis"] = 1716816576615;
 </script>
 <script type="text/javascript">
-window.output["generated"] = 28432;
+window.output["generated"] = 37;
 </script>
 <script type="text/javascript">
 window.output["expand_keywords"] = null;
 </script>
 <script type="text/javascript">
-window.settings = {"defaultLevel":"INFO","minLevel":"INFO","reportURL":"report.html","rpa":false,"splitLogBase":"log","title":""};
+window.settings = {"defaultLevel":"INFO","minLevel":"FAIL","reportURL":"report.html","rpa":false,"splitLogBase":"log","title":""};
 </script>
 <title></title>
 </head>
@@ -1931,8 +1928,8 @@ function makeElementVisible(id) {
         util.map(ids, expandElementWithId);
         if (ids.length) {
             expandFailed(window.testdata.findLoaded(util.last(ids)));
+            window.location.hash = '';
             window.location.hash = id;
-            document.getElementById(id).scrollIntoView();
             highlightLinkTarget();
         }
     });

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.7.9 on win32)" generated="20240524 17:17:00.065" rpa="false" schemaversion="4">
+<robot generator="Robot 5.0.1 (Python 3.10.12 on win32)" generated="20240527 15:29:36.612" rpa="false" schemaversion="3">
 <suite id="s1" name="Example" source="c:\Users\lbenamar\Desktop\Nouveau dossier\robotframework-selenium-example\test-cases\example.robot">
 <test id="s1-t1" name="Search Google with &quot;Google Search&quot; button via Chrome" line="10">
 <kw name="Open Url With Chrome" library="keywords">
@@ -7,81 +7,79 @@
 <kw name="Open Url" library="keywords">
 <arg>Chrome</arg>
 <arg>${url}</arg>
-<kw name="Create Webdriver" library="SeleniumLibrary">
+<kw name="Create WebDriver">
 <arg>${browser}</arg>
-<doc>Creates an instance of Selenium WebDriver.</doc>
-<msg timestamp="20240524 17:17:00.190" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
-<status status="PASS" starttime="20240524 17:17:00.189" endtime="20240524 17:17:01.605"/>
+<msg timestamp="20240527 15:29:36.635" level="FAIL">No keyword with name 'Create WebDriver' found.</msg>
+<status status="FAIL" starttime="20240527 15:29:36.635" endtime="20240527 15:29:36.642"/>
 </kw>
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20240524 17:17:01.605" endtime="20240524 17:17:01.642"/>
+<kw name="Maximize Browser Window">
+<status status="NOT RUN" starttime="20240527 15:29:36.642" endtime="20240527 15:29:36.642"/>
 </kw>
-<kw name="Go To" library="SeleniumLibrary">
+<kw name="Go To">
 <arg>${url}</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20240524 17:17:01.642" level="INFO">Opening url 'https://www.google.com.vn/'</msg>
-<status status="PASS" starttime="20240524 17:17:01.642" endtime="20240524 17:17:24.662"/>
+<status status="NOT RUN" starttime="20240527 15:29:36.642" endtime="20240527 15:29:36.642"/>
 </kw>
-<kw name="Wait For Condition" library="SeleniumLibrary">
+<kw name="Wait For Condition">
 <arg>return !!document.body</arg>
-<doc>Waits until ``condition`` is true or ``timeout`` expires.</doc>
-<status status="PASS" starttime="20240524 17:17:24.662" endtime="20240524 17:17:24.671"/>
+<status status="NOT RUN" starttime="20240527 15:29:36.642" endtime="20240527 15:29:36.642"/>
 </kw>
-<status status="PASS" starttime="20240524 17:17:00.189" endtime="20240524 17:17:24.671"/>
+<status status="FAIL" starttime="20240527 15:29:36.635" endtime="20240527 15:29:36.642"/>
 </kw>
-<status status="PASS" starttime="20240524 17:17:00.189" endtime="20240524 17:17:24.671"/>
+<status status="FAIL" starttime="20240527 15:29:36.635" endtime="20240527 15:29:36.642"/>
 </kw>
 <kw name="Enter Keyword" library="keywords">
 <arg>Github</arg>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>xpath://textarea[@name="q"]</arg>
-<arg>${keyword}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20240524 17:17:24.673" level="INFO">Typing text 'Github' into text field 'xpath://textarea[@name="q"]'.</msg>
-<status status="PASS" starttime="20240524 17:17:24.672" endtime="20240524 17:17:24.740"/>
-</kw>
-<status status="PASS" starttime="20240524 17:17:24.672" endtime="20240524 17:17:24.741"/>
+<status status="NOT RUN" starttime="20240527 15:29:36.642" endtime="20240527 15:29:36.642"/>
 </kw>
 <kw name="Click Search Button" library="keywords">
-<kw name="Submit Form" library="SeleniumLibrary">
-<arg>xpath://form[@role="search"]</arg>
-<doc>Submits a form identified by ``locator``.</doc>
-<msg timestamp="20240524 17:17:24.743" level="INFO">Submitting form 'xpath://form[@role="search"]'.</msg>
-<status status="PASS" starttime="20240524 17:17:24.742" endtime="20240524 17:17:24.964"/>
+<status status="NOT RUN" starttime="20240527 15:29:36.642" endtime="20240527 15:29:36.642"/>
 </kw>
-<status status="PASS" starttime="20240524 17:17:24.742" endtime="20240524 17:17:24.965"/>
-</kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<kw name="Wait Until Element Is Visible">
 <arg>css:div#rso</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240524 17:17:24.966" endtime="20240524 17:17:26.342"/>
+<status status="NOT RUN" starttime="20240527 15:29:36.642" endtime="20240527 15:29:36.642"/>
 </kw>
-<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<kw name="Page Should Contain Element">
 <arg>xpath://cite[contains(text(), "https://github.com")]</arg>
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<msg timestamp="20240524 17:17:26.351" level="INFO">Current page contains element 'xpath://cite[contains(text(), "https://github.com")]'.</msg>
-<status status="PASS" starttime="20240524 17:17:26.343" endtime="20240524 17:17:26.352"/>
+<status status="NOT RUN" starttime="20240527 15:29:36.642" endtime="20240527 15:29:36.642"/>
 </kw>
-<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20240524 17:17:26.352" endtime="20240524 17:17:28.492"/>
+<kw name="Close Browser" type="TEARDOWN">
+<msg timestamp="20240527 15:29:36.653" level="FAIL">No keyword with name 'Close Browser' found.</msg>
+<status status="FAIL" starttime="20240527 15:29:36.653" endtime="20240527 15:29:36.653">No keyword with name 'Close Browser' found.</status>
 </kw>
-<status status="PASS" starttime="20240524 17:17:00.188" endtime="20240524 17:17:28.492"/>
+<status status="FAIL" starttime="20240527 15:29:36.635" endtime="20240527 15:29:36.653">No keyword with name 'Create WebDriver' found.
+
+Also teardown failed:
+No keyword with name 'Close Browser' found.</status>
 </test>
 <doc>Search Google</doc>
-<status status="PASS" starttime="20240524 17:17:00.068" endtime="20240524 17:17:28.495"/>
+<status status="FAIL" starttime="20240527 15:29:36.615" endtime="20240527 15:29:36.653"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Example">Example</stat>
+<stat pass="0" fail="1" skip="0" id="s1" name="Example">Example</stat>
 </suite>
 </statistics>
 <errors>
+<msg timestamp="20240527 15:29:36.629" level="ERROR">Error in file 'c:\Users\lbenamar\Desktop\Nouveau dossier\robotframework-selenium-example\test-cases\example.robot' on line 3: Importing library 'SeleniumLibrary' failed: ModuleNotFoundError: No module named 'SeleniumLibrary'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  c:\Users\lbenamar\.vscode\extensions\robocorp.robotframework-lsp-1.12.0\src\robotframework_debug_adapter
+  C:\Users\lbenamar\Desktop\Nouveau dossier\robotframework-selenium-example
+  c:\Users\lbenamar\.vscode\extensions\robocorp.robotframework-lsp-1.12.0\src
+  c:\Users\lbenamar\.vscode\extensions\robocorp.robotframework-lsp-1.12.0\src\robotframework_ls\vendored
+  c:\ProgramData\robocorp\ht\1c93447_b1f3c24_66529ced\python310.zip
+  c:\ProgramData\robocorp\ht\1c93447_b1f3c24_66529ced\DLLs
+  c:\ProgramData\robocorp\ht\1c93447_b1f3c24_66529ced\lib
+  c:\ProgramData\robocorp\ht\1c93447_b1f3c24_66529ced
+  c:\ProgramData\robocorp\ht\1c93447_b1f3c24_66529ced\lib\site-packages
+  c:\ProgramData\robocorp\ht\1c93447_b1f3c24_66529ced\lib\site-packages\win32
+  c:\ProgramData\robocorp\ht\1c93447_b1f3c24_66529ced\lib\site-packages\win32\lib
+  c:\ProgramData\robocorp\ht\1c93447_b1f3c24_66529ced\lib\site-packages\Pythonwin</msg>
 </errors>
 </robot>
